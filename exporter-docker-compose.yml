@@ -1,0 +1,9 @@
+version: "3"
+
+services:  
+  nginx-prometheus-exporter:
+    container_name: nginx-prometheus-exporter
+    image: nginx/nginx-prometheus-exporter:latest
+    ports:
+      - 9113:9113
+    command: -nginx.scrape-uri http://localhost:80/metrics
